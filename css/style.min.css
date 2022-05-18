@@ -211,6 +211,10 @@ body {
     letter-spacing: -0.232143px;
   }
 }
+.location__container {
+  display: flex;
+  flex-direction: column;
+}
 .location__head {
   padding: 24px 24px 157px;
   background-image: url("../img/bg.png");
@@ -236,9 +240,7 @@ body {
   top: 167px;
   left: 50%;
   transform: translateX(-50%);
-}
-.location__map {
-  height: 100%;
+  z-index: 2;
 }
 
 @media screen and (min-width: 1150px) {
@@ -259,4 +261,8 @@ body {
     position: absolute;
     top: 200px;
   }
+}
+#map {
+  height: 100%;
+  flex-grow: 1;
 }
