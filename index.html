@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.min.css">
+	<title>title must be here</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+
+<body>
+	<header>
+</header>
+	<main>
+		<section class="location">
+			<div class="container location__container">
+				<div class="location__head">
+					<h1 class="location__title">IP Address Tracker</h1>
+					<form action="" class="search location__search">
+						<input type="text" class="search__input" name="set-ip" id="set-ip"
+							placeholder="Search for any IP address or domain">
+						<button type="submit" class="material-symbols-outlined search__btn">
+							chevron_right
+						</button>
+					</form>
+					<div class="info-display location__info">
+						<div class="info-display__row">
+							<h3 class="info-display__property">
+								IP Address
+							</h3>
+							<span class="info-display__value" id="ip">
+								192.212.174.101
+							</span>
+						</div>
+						<div class="info-display__row">
+							<h3 class="info-display__property">
+								Location
+							</h3>
+							<span class="info-display__value" id="ip">
+								Brooklyn, NY 10001
+							</span>
+						</div>
+						<div class="info-display__row">
+							<h3 class="info-display__property">
+								Timezone
+							</h3>
+							<span class="info-display__value" id="ip">
+								UTC -05:00
+							</span>
+						</div>
+						<div class="info-display__row">
+							<h3 class="info-display__property">
+								ISP
+							</h3>
+							<span class="info-display__value" id="ip">
+								SpaceX Starlink
+							</span>
+						</div>
+					</div>
+				</div>
+				<div id="map" class="location__map">
+
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer></footer>
+	<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgyNOATqYJXRFYxrAK1A-6wu6ZAsUz638&callback=initMap"></script>
+	<script src="js/app.min.js"></script>
+</body>
+
+</html>
