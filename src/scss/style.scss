@@ -93,6 +93,9 @@ body {
 }
 
 
+
+
+
 @media screen and (min-width: $desktop) {
   .info-display {
     max-width: 1110px;
@@ -133,8 +136,9 @@ body {
       letter-spacing: -0.232143px;
     }
   }
-
 }
+
+
 
 
 .location {
@@ -174,6 +178,20 @@ body {
     transform: translateX(-50%);
     z-index: 2;
 
+  }
+}
+
+
+@media screen and (max-width: 603px) {
+  .location {
+    &__info {
+      max-width: unset;
+      width: unset;
+      top: 167px;
+      left: 24px;
+      right: 24px;
+      transform: none;
+    }
   }
 }
 

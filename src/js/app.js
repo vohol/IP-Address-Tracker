@@ -1,6 +1,7 @@
 import * as dfltFunctions from "./modules/defaultFunctions.js";
 dfltFunctions.isWebp();
 
+
 const displayIP = document.getElementById('ip')
 const displayLocation = document.getElementById('location')
 const displayTimeZone = document.getElementById('timezone')
@@ -10,6 +11,7 @@ const inputIP = document.getElementById("set-ip")
 const submitButton = document.querySelector(".search__btn")
 const apiKey = '212a4c4de2344e28abf0db3b4f2b8f9d'
 
+
 document.addEventListener('DOMContentLoaded', () => {
   json(`https://ipgeolocation.abstractapi.com/v1/?api_key=${apiKey}`)
     .then(data => {
@@ -17,9 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 })
 
+
 submitButton.addEventListener('click', () => {
   setupIpFromInput()
 })
+
 
 document.addEventListener('keyup', (e) => {
   if (e.target.id == 'set-ip' && e.key == 'Enter') {
@@ -36,6 +40,7 @@ function initMap(newLat, newLng) {
   const map = new google.maps.Map(displayMap, {
     zoom: 10,
     center: uluru,
+    disableDefaultUI: true,
   });
 
   const image =
@@ -46,7 +51,6 @@ function initMap(newLat, newLng) {
     map: map,
     icon: image,
   });
-
 }
 
 function json(url) {
