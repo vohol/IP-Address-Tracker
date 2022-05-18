@@ -139,6 +139,11 @@ body {
 
 .location {
 
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__head {
     padding: 24px 24px 157px;
     background-image: url('@img/bg.png');
@@ -167,11 +172,8 @@ body {
     top: 167px;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 2;
 
-  }
-
-  &__map {
-    height: 100%;
   }
 }
 
@@ -202,4 +204,9 @@ body {
 
     }
   }
+}
+
+#map {
+  height: 100%;
+  flex-grow: 1;
 }
