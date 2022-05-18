@@ -243,6 +243,16 @@ body {
   z-index: 2;
 }
 
+@media screen and (max-width: 603px) {
+  .location__info {
+    max-width: unset;
+    width: unset;
+    top: 167px;
+    left: 24px;
+    right: 24px;
+    transform: none;
+  }
+}
 @media screen and (min-width: 1150px) {
   .location__head {
     padding: 33px 0 128px;
