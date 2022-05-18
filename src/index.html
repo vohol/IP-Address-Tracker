@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html',{
+"title":"title must be here"
+})
+
+<body>
+	@@include('html/header.html',{})
+	<main>
+		<section class="location">
+			<div class="container location__container">
+				<div class="location__head">
+					<h1 class="location__title">IP Address Tracker</h1>
+					<form action="" class="search location__search">
+						<input type="text" class="search__input" name="set-ip" id="set-ip"
+							placeholder="Search for any IP address or domain">
+						<button type="submit" class="material-symbols-outlined search__btn">
+							chevron_right
+						</button>
+					</form>
+					<div class="info-display location__info">
+						<div class="info-display__row">
+							<h3 class="info-display__property">
+								IP Address
+							</h3>
+							<span class="info-display__value" id="ip">
+								192.212.174.101
+							</span>
+						</div>
+						<div class="info-display__row">
+							<h3 class="info-display__property">
+								Location
+							</h3>
+							<span class="info-display__value" id="ip">
+								Brooklyn, NY 10001
+							</span>
+						</div>
+						<div class="info-display__row">
+							<h3 class="info-display__property">
+								Timezone
+							</h3>
+							<span class="info-display__value" id="ip">
+								UTC -05:00
+							</span>
+						</div>
+						<div class="info-display__row">
+							<h3 class="info-display__property">
+								ISP
+							</h3>
+							<span class="info-display__value" id="ip">
+								SpaceX Starlink
+							</span>
+						</div>
+					</div>
+				</div>
+				<div id="map" class="location__map">
+
+				</div>
+			</div>
+		</section>
+	</main>
+	@@include('html/footer.html',{})
+	<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgyNOATqYJXRFYxrAK1A-6wu6ZAsUz638&callback=initMap"></script>
+	<script src="js/app.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,168 @@
+@use 'variables' as v;
+
+@mixin flex-row-align-centered($justy: start) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: $justy;
+}
+
+@mixin flex-column-align-centered($justy: start) {
+  @include flex-row-align-centered($justy);
+  flex-direction: column;
+}
+
+@mixin wh ($var) {
+  width: $var;
+  height: $var;
+}
+
+/// $min - Minimum font size (px, rem)
+/// $max - Maximum font size (px, rem)
+/// $min-vw - Minimum viewport value lock range (px) --(optional)
+/// $max-vw - Maximum viewport value lock range (px) --(optional)
+/// $fallback - fallback font size (px, rem) --(optional)
+
+
+/* SASS mixin end */
+
+
+@mixin fluid-property($min, $max, $property, $min-vw: v.$mobile, $max-vw: v.$desktop, $fallback: false) {
+  $min-no-unit : strip-units($min);
+  $max-no-unit : strip-units($max);
+
+  $min-vw-no-unit : strip-units($min-vw);
+  $max-vw-no-unit : strip-units($max-vw);
+
+  @if getUnit($min)=="rem" or getUnit($min)=="em" {
+    $min-no-unit : strip-units($min) * 16;
+    $max-no-unit : strip-units($max) * 16;
+  }
+
+  $responsive : calc(#{$min-no-unit}px + (#{$max-no-unit} - #{$min-no-unit}) * ((100vw - #{$min-vw}) / (#{$max-vw-no-unit} - #{$min-vw-no-unit})));
+
+  @if $fallback {
+    #{$property}: $fallback;
+  }
+
+  @else {
+    #{$property}: $max;
+  }
+
+  #{$property}: $responsive;
+
+  @media screen and (max-width: #{$min-vw}) {
+    #{$property}: $min;
+  }
+
+  @media screen and (min-width: #{$max-vw}) {
+    #{$property}: $max;
+  }
+}
+
+
+/* SASS mixin end */
+
+/* SASS mixin start */
+
+
+
+@mixin fluid-ultra($properties, $min-vw: v.$mobile, $max-vw: v.$desktop, $fallback: false) {
+
+  @each $min,
+  $max,
+  $property in $properties {
+    //default
+    $new-property: $property;
+
+    //padding aliases
+    @if $property ==pl {
+      $new-property: padding-left;
+    }
+
+    @else if $property ==pr {
+      $new-property: padding-right;
+    }
+
+    @else if $property ==pt {
+      $new-property: padding-top;
+    }
+
+    @else if $property ==pb {
+      $new-property: padding-bottom;
+    }
+
+    @else if $property ==pp {
+      $new-property: padding;
+    }
+
+    @else if $property ==ml {
+      $new-property: margin-left;
+    }
+
+    //margin aliases
+    @else if $property ==mr {
+      $new-property: margin-right;
+    }
+
+    @else if $property ==mt {
+      $new-property: margin-top;
+    }
+
+    @else if $property ==mb {
+      $new-property: margin-bottom;
+    }
+
+    @else if $property ==mm {
+      $new-property: margin;
+    }
+
+    @else if $property ==fs {
+      $new-property: font-size;
+    }
+
+
+    $min-no-unit : strip-units($min);
+    $max-no-unit : strip-units($max);
+
+    $min-vw-no-unit : strip-units($min-vw);
+    $max-vw-no-unit : strip-units($max-vw);
+
+    @if getUnit($min)=="rem" or getUnit($min)=="em" {
+      $min-no-unit : strip-units($min) * 16;
+      $max-no-unit : strip-units($max) * 16;
+    }
+
+    $responsive : calc(#{$min-no-unit}px + (#{$max-no-unit} - #{$min-no-unit}) * ((100vw - #{$min-vw}) / (#{$max-vw-no-unit} - #{$min-vw-no-unit})));
+
+    @if $fallback {
+      #{$new-property}: $fallback;
+    }
+
+    @else {
+      #{$new-property}: $max;
+    }
+
+    #{$new-property}: $responsive;
+
+    @media screen and (max-width: #{$min-vw}) {
+      #{$new-property}: $min;
+    }
+
+    @media screen and (min-width: #{$max-vw}) {
+      #{$new-property}: $max;
+    }
+  }
+}
+
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+@function getUnit($value) {
+  @return str-slice($value * 0 + "", 2, -1);
+}
+
+
+
+/* SASS mixin end */

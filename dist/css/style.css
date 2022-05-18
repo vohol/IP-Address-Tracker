@@ -1,0 +1,262 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
+/* SASS mixin end */
+/* SASS mixin end */
+/* SASS mixin start */
+/* SASS mixin end */
+body {
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+.container {
+  max-width: 100%;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.search {
+  max-width: 555px;
+  width: 100%;
+  min-height: 58px;
+  box-shadow: 0px 50px 50px -25px rgba(0, 0, 0, 0.0983665);
+  border-radius: 15px;
+  display: flex;
+}
+.search__btn {
+  width: 58px;
+  height: 58px;
+  background-color: #000;
+  border-radius: 0px 15px 15px 0px;
+  color: #FFFFFF;
+  transition: background-color 0.2s;
+}
+.search__btn:hover {
+  background-color: #3F3F3F;
+}
+.search__input {
+  max-width: 100%;
+  width: 100%;
+  background-color: #FFFFFF;
+  border-radius: 15px 0 0 15px;
+  padding: 0 24px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #2C2C2C;
+}
+
+.info-display {
+  max-width: 555px;
+  width: 100%;
+  padding: 24px;
+  background: #FFFFFF;
+  box-shadow: 0px 50px 50px -25px rgba(0, 0, 0, 0.0983665);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 24px;
+}
+.info-display__property {
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 12px;
+  text-align: center;
+  letter-spacing: 1.45833px;
+  text-transform: uppercase;
+  color: rgba(44, 44, 44, 0.5);
+  margin-bottom: 7px;
+}
+.info-display__value {
+  display: block;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: -0.178571px;
+  color: #2C2C2C;
+}
+
+@media screen and (min-width: 1150px) {
+  .info-display {
+    max-width: 1110px;
+    padding: 36px 0;
+    flex-direction: row;
+    gap: 0;
+  }
+  .info-display__row {
+    padding: 0 32px;
+    max-width: 278px;
+    width: 100%;
+    position: relative;
+  }
+  .info-display__row:not(:last-child)::after {
+    content: " ";
+    position: absolute;
+    width: 1px;
+    height: 75px;
+    background-color: rgba(44, 44, 44, 0.15);
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+  .info-display__property {
+    font-size: 12px;
+    line-height: 14px;
+    text-align: start;
+    letter-spacing: 1.75px;
+    margin-bottom: 13px;
+  }
+  .info-display__value {
+    font-size: 26px;
+    line-height: 30px;
+    text-align: start;
+    letter-spacing: -0.232143px;
+  }
+}
+.location__head {
+  padding: 24px 24px 157px;
+  background-image: url("../img/bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+.location__title {
+  font-size: 26px;
+  line-height: 1.15;
+  letter-spacing: -0.232143px;
+  color: #FFFFFF;
+  margin-bottom: 29px;
+  text-align: center;
+}
+.location__search {
+  margin: 0 auto;
+  margin-bottom: 24px;
+}
+.location__info {
+  position: absolute;
+  top: 167px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.location__map {
+  height: 100%;
+}
+
+@media screen and (min-width: 1150px) {
+  .location__head {
+    padding: 33px 0 128px;
+  }
+  .location__title {
+    font-size: 32px;
+    line-height: 0.94;
+    letter-spacing: -0.285714px;
+    margin-bottom: 31px;
+  }
+  .location__search {
+    margin: 0 auto;
+    margin-bottom: 48px;
+  }
+  .location__info {
+    position: absolute;
+    top: 200px;
+  }
+}
